@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="login.css" />
+  </head>
+  <body>
+    <div class="login-box">
+      <h2>Login Here</h2>
+      <form id="loginForm">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter Email" required />
+        <label>Password</label>
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter Password"
+          required
+        />
+        <input type="submit" name="submit" value="Login" onclick="validate()" />
+        <div class="links">
+          <a href="">Forgot Password?</a>
+          <a href="registration.html">Sign Up</a>
+        </div>
+      </form>
+    </div>
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent form submission
+
+          var email = document.forms[0]["email"].value;
+          var password = document.forms[0]["password"].value;
+
+          if (email === "patilketan080@gmail.com" && password === "ketan") {
+            alert("Login successful!");
+            window.location.href = "homepage.html"; // Redirect to the home page
+          } else {
+            alert("Invalid login credentials!");
+          }
+        });
+    </script>
+  </body>
+</html>

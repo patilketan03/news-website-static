@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Signup Page</title>
+    <link rel="stylesheet" type="text/css" href="registration.css" />
+    <style>
+      body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(45deg,rgb(212, 171, 250),rgb(111, 176, 244));
+}
+  
+  .signup-box {
+    width: 400px;
+    height: 500px;
+    background: #f9ebeb;
+    color: #000;
+    margin-left: 36%;
+    margin-top: 10%;
+    box-sizing: border-box;
+    padding: 50px 30px;
+  }
+  
+  h2 {
+    margin: 0;    
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+  }
+  
+  .signup-box label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+  }
+  
+  .signup-box input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .signup-box input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #000;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #000;
+    font-size: 16px;
+  }
+  
+  .signup-box input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #000;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+  }
+  
+  .signup-box input[type="submit"]:hover {
+    cursor: pointer;
+    background: #716968;
+    color: #000000;
+  }
+  
+  .signup-box p {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .signup-box a {
+    text-decoration: none;
+    color: #000;
+  }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Signup</h1>
+      <form id="signup-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+        <label for="birthdate">Birthdate:</label>
+        <input type="date" id="birthdate" name="birthdate" required />
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+        <label for="confirm-password">Confirm Password:</label>
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirm-password"
+          required
+        />
+        <button type="submit">Signup</button>
+      </form>
+    </div>
+    <script>
+      const form = document.getElementById("signup-form");
+      const passwordInput = document.getElementById("password");
+      const confirmPasswordInput = document.getElementById("confirm-password");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (passwordInput.value !== confirmPasswordInput.value) {
+          alert("Passwords do not match");
+        } else {
+          alert("Signup successful");
+          window.location.href = "homepage.html";
+          form.reset();
+        }
+      });
+    </script>
+  </body>
+</html>
